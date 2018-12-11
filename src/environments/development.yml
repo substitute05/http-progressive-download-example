@@ -5,7 +5,7 @@ server:
       outputBufferSize: 5MiB
     - type: https
       port: 8088
-      keyStorePath: keystore.jks
+      keyStorePath: ./keystore.jks
       keyStorePassword: "skyclass"
       validateCerts: false
       validatePeers: false
