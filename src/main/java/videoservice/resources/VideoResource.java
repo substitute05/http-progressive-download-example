@@ -4,6 +4,7 @@ import static java.time.ZoneOffset.UTC;
 import static java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 import static javax.ws.rs.core.Response.Status.PARTIAL_CONTENT;
+import static javax.ws.rs.core.Response.Status.REQUEST_ENTITY_TOO_LARGE;
 
 import com.google.common.io.ByteSource;
 import com.google.common.io.ByteStreams;

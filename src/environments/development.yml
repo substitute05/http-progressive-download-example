@@ -3,6 +3,13 @@ server:
     - type: http
       port: 8080
       outputBufferSize: 5MiB
+    - type: https
+      port: 8088
+      keyStorePath: keystore.jks
+      keyStorePassword: "skyclass"
+      validateCerts: false
+      validatePeers: false
+
   adminConnectors:
     - type: http
       port: 8081
