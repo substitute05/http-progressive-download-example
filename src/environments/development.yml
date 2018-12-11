@@ -5,10 +5,9 @@ server:
       outputBufferSize: 5MiB
     - type: https
       port: 8088
-      keyStorePath: ./keystore.jks
-      keyStorePassword: "skyclass"
+      keyStorePath: /home/skyclass/gaoxiang/http-progressive-download-example/src/environments/keystore
+      keyStorePassword: skyclass
       validateCerts: false
-      validatePeers: false
 
   adminConnectors:
     - type: http
