@@ -75,10 +75,10 @@ public class VideoResource {
             .header("Accept-Ranges", "bytes")
             .header("Content-Length", file.length())
             .header("Last-Modified", new Date(file.lastModified()))
-            .header("Access-Control-Allow-Origin","*")
+            .header("Access-Control-Allow-Origin","https://192.168.30.24:443")
 //            .header("Access-Control-Allow-Credentials","true")
-            .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-            .header("Access-Control-Allow-Methods","GET,POST")
+            .header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type")
+            .header("Access-Control-Allow-Methods","GET,POST,OPTIONS")
             .build();
   }
 
@@ -92,10 +92,10 @@ public class VideoResource {
             .header("Content-Range", toContentRange(range, file.length()))
             .header("Content-Length",range.getLength())
             .header("Last-Modified", new Date(file.lastModified()))
-            .header("Access-Control-Allow-Origin","*")
+            .header("Access-Control-Allow-Origin","https://192.168.30.24:443")
 //            .header("Access-Control-Allow-Credentials","true")
-            .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-            .header("Access-Control-Allow-Methods","GET,POST")
+            .header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type")
+            .header("Access-Control-Allow-Methods","GET,POST,OPTIONS")
         .build();
   }
 
