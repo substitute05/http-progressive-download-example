@@ -76,7 +76,8 @@ public class VideoResource {
             .header("Content-Length", file.length())
             .header("Last-Modified", new Date(file.lastModified()))
             .header("Access-Control-Allow-Origin","*")
-            .header("Access-Control-Allow-Headers", "X-Requested-With")
+            .header("Access-Control-Allow-Credentials","true")
+            .header("Access-Control-Allow-Headers", "Content-Type")
             .header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS")
             .build();
   }
@@ -86,14 +87,15 @@ public class VideoResource {
     ByteSource filePart = sliceFile(file, range);
     StreamingOutput stream = createStream(filePart);
     return Response.status(PARTIAL_CONTENT)
-        .entity(stream)
-        .header("Accept-Ranges", "bytes")
-        .header("Content-Range", toContentRange(range, file.length()))
-        .header("Content-Length",range.getLength())
-	    .header("Access-Control-Allow-Origin","*")
-        .header("Access-Control-Allow-Headers", "X-Requested-With")
-        .header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS")
-        .header("Last-Modified", new Date(file.lastModified()))
+            .entity(stream)
+            .header("Accept-Ranges", "bytes")
+            .header("Content-Range", toContentRange(range, file.length()))
+            .header("Content-Length",range.getLength())
+            .header("Last-Modified", new Date(file.lastModified()))
+            .header("Access-Control-Allow-Origin","*")
+            .header("Access-Control-Allow-Credentials","true")
+            .header("Access-Control-Allow-Headers", "Content-Type")
+            .header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS")
         .build();
   }
 
