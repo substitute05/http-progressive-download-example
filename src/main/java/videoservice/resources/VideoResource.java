@@ -71,11 +71,12 @@ public class VideoResource {
   private Response fullVideoResponse(File file) {
     StreamingOutput stream = createStream(Files.asByteSource(file));
     return Response.ok()
-        .entity(stream)
-        .header("Accept-Ranges", "bytes")
-        .header("Content-Length", file.length())
-        .header("Last-Modified", new Date(file.lastModified()))
-        .build();
+            .entity(stream)
+            .header("Accept-Ranges", "bytes")
+            .header("Content-Length", file.length())
+            .header("Last-Modified", new Date(file.lastModified()))
+            .header("Access-Control-Allow-Origin","*")
+            .build();
   }
 
   private Response videoPartResponse(File file, String rangeHeader) {
