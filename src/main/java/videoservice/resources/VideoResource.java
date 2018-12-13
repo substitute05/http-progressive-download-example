@@ -90,7 +90,7 @@ public class VideoResource {
         .header("Accept-Ranges", "bytes")
         .header("Content-Range", toContentRange(range, file.length()))
         .header("Content-Length",range.getLength())
-	.header("Access-Control-Allow-Origin","*")
+	    .header("Access-Control-Allow-Origin","*")
         .header("Access-Control-Allow-Headers", "X-Requested-With")
         .header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS")
         .header("Last-Modified", new Date(file.lastModified()))
