@@ -50,7 +50,19 @@
 
     <build>
         <finalName>${project.artifactId}</finalName>
-
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>banner.txt</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -117,19 +129,6 @@
         <profile>
             <id>code-coverage</id>
             <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                        <filtering>false</filtering>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                        <filtering>true</filtering>
-                        <includes>
-                            <include>banner.txt</include>
-                        </includes>
-                    </resource>
-                </resources>
                 <plugins>
                     <plugin>
                         <groupId>org.jacoco</groupId>
