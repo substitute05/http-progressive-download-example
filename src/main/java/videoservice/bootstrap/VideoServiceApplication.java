@@ -3,6 +3,7 @@ package videoservice.bootstrap;
 import static org.glassfish.jersey.CommonProperties.OUTBOUND_CONTENT_LENGTH_BUFFER;
 
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
@@ -20,6 +21,7 @@ public class VideoServiceApplication extends Application<VideoServiceConfigurati
 
   @Override
   public void initialize(Bootstrap<VideoServiceConfiguration> bootstrap) {
+    bootstrap.addBundle(new AssetsBundle( "/static/", "/", "index.html",  "index"));
     bootstrap.setConfigurationSourceProvider(new SubstitutingSourceProvider(
         bootstrap.getConfigurationSourceProvider(), new EnvironmentVariableSubstitutor(true)));
   }

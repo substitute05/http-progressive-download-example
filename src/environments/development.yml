@@ -1,11 +1,12 @@
 server:
+  rootPath: /api/
   applicationConnectors:
     - type: http
       port: 8080
       outputBufferSize: 5MiB
     - type: https
       port: 8088
-      keyStorePath: /home/skyclass/gaoxiang/http-progressive-download-example/src/environments/keystore
+      keyStorePath: /Users/OS/IdeaProjects/http-progressive-download-example/src/environments/keystore
       keyStorePassword: skyclass
       validateCerts: false
 
@@ -13,4 +14,4 @@ server:
     - type: http
       port: 8081
 
-videosDirectory: ${VIDEOS_DIRECTORY}
+videosDirectory: /Users/OS/IdeaProjects/http-progressive-download-example/src/test/resources/videos
