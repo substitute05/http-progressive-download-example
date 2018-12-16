@@ -2,11 +2,16 @@ server:
   rootPath: /api/
   applicationConnectors:
     - type: http
-      port: 8080
+      port: 8082
       outputBufferSize: 5MiB
     - type: https
+<<<<<<< Updated upstream
       port: 8088
       keyStorePath: /Users/OS/IdeaProjects/http-progressive-download-example/src/environments/keystore
+=======
+      port: 8090
+      keyStorePath: F:/Workspaces/APP/http-progressive-download-examples/src/environments/keystore
+>>>>>>> Stashed changes
       keyStorePassword: skyclass
       validateCerts: false
 
@@ -14,4 +19,8 @@ server:
     - type: http
       port: 8081
 
+<<<<<<< Updated upstream
 videosDirectory: /Users/OS/IdeaProjects/http-progressive-download-example/src/test/resources/videos
+=======
+videosDirectory: file:/H:/videos
+>>>>>>> Stashed changes
